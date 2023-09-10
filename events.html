@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+ <link rel ="stylesheet" href="css/style.css">
+ <title>SETU Retro gaming student group</title>
+<style>
+.ui.table thead th {
+  background: #58d5ac;
+  color: #fff;
+}
+
+.ui.striped.table > tr:nth-child(2n),
+.ui.striped.table tbody tr:nth-child(2n) {
+  background-color: #78ffc2;
+}
+
+.ui.striped.table > tr:nth-child(2n+1),
+.ui.striped.table tbody tr:nth-child(2n+1) {
+  background-color: #a2ffb8;
+}
+
+.ui.selectable.table tbody tr:hover,
+.ui.table tbody tr td.selectable:hover {
+  background: #8dfc51 !important;
+}
+</style>
+</head>
+
+<body>
+<div class="ui stackable grid container">
+
+<header class = "sixteen wide column">
+
+      <h1>Retro Gaming Club</h1>
+      <p id = "tagline">For students who love the classics</p>
+</header>
+
+<nav class="three wide column">
+<ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="consoles.html">Consoles</a></li>
+      <li><a href="events.html">Club Events</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</nav>
+<main class="thirteen wide column"> 
+<h2>Club Competitions and Events happening this Semester</h2>
+<p>Students of every skill level are invited to monthly competions.
+Including Mortal Kombat and Street Figher Tournaments. For those wishing
+to flex their speedrunning skill, charity speed runs are held monthly also.
+</p>
+
+<main class="thirteen wide column">
+  <h2>Upcoming Events</h2>
+  <div class="ui segment">
+    <table class="ui striped selectable compact single line table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Event</th>
+          <th>Places available</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{date}}</td>
+            <td>{{event}}</td>
+            <td>{{places}}</td>
+            <td>{{contact}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script id="events-template" type="text/x-handlebars-template">
+  {{#each events}}
+    <tr>
+      <td>{{date}}</td>
+      <td>{{event}}</td>
+      <td>{{places}}</td>
+      <td>{{contact}}</td>
+    </tr>
+  {{/each}}
+</script>
+
+<img src="images/tanooki.png" id="draggable" width="200" height="200"/>
+<caption>
+<h2>Mario can be moved around the screen,try it.<br>
+Implemented using JQUERY draggable</caption>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous">
+</script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $(() => {
+    const data = {
+      events: [
+        {
+          date: "12 September",
+          event: "Super Street Fighter II: Arcade Edition",
+          places: "128 player-Tournament",
+          contact: "SETU student club"
+        },
+        {
+          date: "19 October",
+          event: "Mortal Kombat II",
+          places: "128 player-Tournament",
+          contact: "SETU student club"
+        },
+        {
+          date: "5 November",
+          event: "Super Mario World Speedrun",
+          places: "Limited spaces, first come first serve",
+          contact: "SETU student club"
+        },
+        {
+          date: "12 December",
+          event: "Sonic the hedgehog 3 speedrun",
+          places: "limited spaces, first come first serve",
+          contact: "SETU student club"
+        }
+      ]
+    };
+
+    let template = Handlebars.compile($("#events-template").html());
+
+    let output = template(data);
+
+    $("tbody").html(output);
+
+    $("#draggable").draggable();
+  });
+</script>
+
+</body>
+</html>

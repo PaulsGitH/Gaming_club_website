@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+  <link rel ="stylesheet" href="css/style.css">
+  <title>SETU Retro gaming student group</title>
+  <style>
+
+    </style>
+</head>
+
+<body>
+<div class="ui stackable grid container">
+  
+<header class = "sixteen wide column">
+
+      <h1>Retro Gaming Club</h1>
+      <p id = "tagline">For students who love the classics</p>
+</header>
+
+<nav class="three wide column">
+<ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="consoles.html">Consoles</a></li>
+      <li><a href="events.html">Club Events</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</nav>
+
+<main class="thirteen wide column">
+  <p>Shown below are the consoles that we have available, we have no disc based consoles due to potential improper handling of the cd/dvd-roms 
+    that are required for non cartridge based systems, apologies for any inconvenience this may cause.</p>
+  <div class="ui centered link cards" id="consoles-list">
+  </div>
+</main>
+</div>
+
+<script id="consoles-template"  type="text/x-handlebars-template">
+
+  {{#each consoles}}
+  <div class="ui card">
+    <div class="image">
+      <img src="{{image}}">
+    </div>
+    <div class="content">
+      <a class="header">{{name}}</a>
+      <div class="meta">
+        <span class="date">{{releaseDate}}</span>
+      </div>
+      <div class="description">
+        {{description}}
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="game icon"></i>
+        {{bestSellingGame}}
+      </a>
+    </div>
+  </div>
+  {{/each}}
+</script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous">
+</script>
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+<script>
+
+$(() => {
+
+    
+    const data = {
+      consoles: [
+        {
+          name: "Nintendo Entertainment System",
+          image: "images/nintendo.jpg",
+          releaseDate: "October 18th 1985",
+          description: "The Western release of the Nintendo Famicom.",
+          bestSellingGame: "Super Mario Bros. (40.24 million)"
+        },
+        {
+          name: "Super Nintendo Entertainment System",
+          image: "images/snes.jpg",
+          releaseDate: "April 11th 1992",
+          description: "The UK/Ireland release of the Super Nintendo.",
+          bestSellingGame: "Super Mario World (20.60 million)"
+        },
+        {
+          name: "Sega Megadrive",
+          image: "images/megadrive.jpg",
+          releaseDate: "September 1990",
+          description: "The European release of the Sega Megadrive.",
+          bestSellingGame: "Sonic the Hedgehog (15 million)"
+        }
+      ]
+    };
+
+    let template = Handlebars.compile($('#consoles-template').html());
+
+    let output = template(data);
+
+    $("#consoles-list").html(output);
+
+  });
+
+</script>
+</body>
+</html>

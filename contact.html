@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+  <link rel ="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>SETU Retro gaming student group</title>
+  <style>
+
+  .ui.primary.button{
+      background: rgb(78, 178, 145);
+    }
+
+    </style>
+</head>
+
+<body>
+<div class="ui stackable grid container">
+
+<header class = "sixteen wide column">
+
+      <h1>Retro Gaming Club</h1>
+      <p id = "tagline">For students who love the classics</p>
+</header>
+<nav class="three wide column">
+<ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="consoles.html">Consoles</a></li>
+      <li><a href="events.html">Club Events</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</nav>
+<main class="thirteen wide column">
+
+    <h2>Contact Us</h2>
+<p>If you wish to contact us about any upcoming Competitions or speedruns contact us through the Student Club contacts.</p>
+<p>any queries outside if this, please <a href="mailto:paullyretrogamestudentclub@setu.ie">drop us a line by email</a>.</p>
+<form action="process.html" method="get" id = "contact" class="ui form">
+
+
+<div class = "inline field">
+    <label for="contactname" class="three wide field">Contact Name</label>
+     <input type="text" name="contactname" id="contactname" class="eight wide field" autofocus required pattern = "[A-Z][a-z]+( [A-Z][a-z]+)*"
+     title="Please enter a name (Surname optional) with First Letter capitalised">
+</div>
+
+
+<div class = "inline field">
+  <label for="telephone" class="three wide field">Student ID</label>
+  <input class="eight wide field" type="tel" name="telephone" id="telephone"   required pattern = "^(\(\d{3}\)|\d{3})-?\d{5,}$"
+  title = "Please enter your student ID number">
+</div>
+
+<div class = "inline field">
+    <label for="email" class="ui three wide field">Student Email Address</label>
+     <input type="email" name="email" id="email" class="ui eight wide field" required  pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
+     title="Please enter your student email">
+ </div>
+
+<div class = "inline field">
+    <label for="eventname" class="ui three wide field">Fighting game tournament or Speedrunning?</label>
+     <input type="text" name="eventname" id="eventname"  class="ui eight wide field" required pattern= "[A-Za-z0-9\ ]{3,}"
+     title ="Please select which event">
+</div>
+
+<div class = "inline field">
+    <label for="eventdate" class="ui three wide field">When's the event happening?</label>
+     <input type="date" name="eventdate" id="eventdate" class="ui eight wide field" required title="Please select a date">
+</div>
+
+<div class = "inline field">
+   <label for="region" class="ui three wide field">Which game is the event set around?</label>
+    <select name="region" id="region" class="ui eight wide field" >
+        <option value ="Mortal Kombat II">Mortal Kombat II</option>
+        <option value ="Super Street Fighter II">Super Street Fighter II</option>
+        <option value ="Super Bomberman">Super Bomberman</option>
+        <option value ="Killer Instinct">Killer Instinct</option>
+        <option value ="Clayfighter">Clayfighter</option>
+        <option value ="Fatal Fury Special">Fatal Fury Special</option>
+        <option value ="Teenage mutant ninja turtles:Tournament Fighters">Teenage mutant ninja turtles:Tournament Fighters</option>
+        <option value ="Dragonball Z:Hyper Dimension">Dragonball Z:Hyper Dimension</option>
+        <option value ="Ultimate Mortal Kombat 3">Ultimate Mortal Kombat 3</option>
+        <option value = "Gundam Wing">Gundam Wing</option>
+    </select>
+</div>
+
+
+  <p>Please help us improve our catalogue by suggesting games and events.(Within reason, as many retro
+    games command a hefty collectors price. Keep this in mind when making suggestion for certain games)
+  </p>
+  <div class = "inline field">
+  <label for="details" class="ui three wide field">Suggestions Welcome</label>
+  <textarea name="details" id="details" cols="30" rows="7"  class="ui twelve wide field"></textarea>
+</div>
+
+  <p>If you have any retro games you wish to donate to the club, it would be greatly appreciated, select the console you wish donate for</p>
+<div class="grouped fields">
+      <div class="field">
+        <div class="ui radio checkbox">
+		  <input type="radio" name="timetocall" id="Nintendo" value="Morning" checked="checked">
+          <label for = "Nintendo" >Original Nintendo</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+		  <input type="radio" name="timetocall" id="SuperNintendo" value="afternoon">
+          <label for = "SuperNintendo" >Super Nintendo</label>
+        </div>
+      </div>
+     <div class="field">
+        <div class="ui radio checkbox">
+		  <input type="radio" name="timetocall" id="SegaMegadrive" value="evening">
+          <label for = "SegaMegadrive" >Sega Megadrive</label>
+        </div>
+      </div>
+     <div class="field">
+        <div class="ui radio checkbox">
+		  <input type="radio" name="timetocall" id="other" value="never">
+          <label for = "other" >Other console</label>
+        </div>
+      </div>
+ </div>
+
+
+  <p>Retro Gaming Club may share information you give us here with other
+  like-minded people or web sites to promote the event. Choose to opt in or out.</p>
+  
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" name="publicize" id="publicize" checked="checked">
+      <label for = "publicize">I consent for this event to be publicized outside of and
+  beyond Retro gaming club, and other student clubs</label>
+    </div>
+  </div>
+
+<button class="ui primary button" type="submit" id="submitBtn ">Send your information</button>
+        <button class="ui primary button" type="reset">Clear</button>
+</form>
+
+
+</main>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+  crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(prevent) {
+      prevent.preventDefault();
+      const contactNameInput = document.getElementById("contactname");
+      const contactName = contactNameInput.value;
+      swal.fire("Hello, " + contactName + "!", "Your form has been submitted, Thanks!");
+    });
+  </script>
+  
+
+<script  src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+</body>
+</html>
+
