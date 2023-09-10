@@ -1,0 +1,261 @@
+/*
+CSS for Retro gaming student club
+*/
+
+body, html {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+  } 
+  
+  body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-color: whitesmoke;
+    line-height: 125%;
+  }
+    
+  nav {
+    height: 484px;
+    background:  url(../backgrounds/nav-bg.jpg) no-repeat left;
+  }
+  
+  header {
+    margin:0;
+    padding:0 !important;
+    background-color:rgb(0, 128, 92);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding-left:0;
+  }
+  nav li {
+    padding:.4em 0;
+  }
+  
+  p, blockquote {
+    font-size: small;
+    color: rgb(0, 128, 81);
+  }
+  
+  #tagline {
+    font-style: italic;
+    font-family: Georgia, Times, serif;
+    border-top: 3px solid #7da5d8;
+    border-bottom: 3px solid #7da5d8;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    padding-left: .8em;
+    margin: 0;
+    background: #bed8f3 url(../backgrounds/tagline-fade.png) repeat-y right;
+  
+  }
+  
+  h1 {
+    font-size: xx-large;
+    color: whitesmoke;
+    padding-top: 2em;
+    padding-bottom: .2em;
+    padding-left: .4em;
+    margin: 0;
+    background: rgb(0, 128, 107) url(../backgrounds/header-bg.jpg) no-repeat top right;
+  }
+  
+  h2 {
+    padding-top:.5em;
+    color: rgb(0, 128, 96);
+    font-size: 130%;
+    font-weight: normal;
+  }
+  
+  h1, h2, h3 {
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  }
+  
+  li {
+    font-size: small;
+  }
+  
+  a {   
+    font-weight: bold; 
+  }
+  
+  a:link {
+    color: black;
+  }
+  
+  a:visited {
+    color: rgb(0, 128, 105);
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(28, 194, 34);
+  }
+  
+  a:active {
+    color: rgb(0, 255, 170);
+    background-color: rgb(0, 128, 85);
+  }
+  
+  .fun {
+    color: #339999;
+    font-family: Georgia, Times, serif;
+    letter-spacing: 0.05em;
+  }
+  
+  img.feature {
+    float:right;
+    margin-right: 1%;
+  }
+  
+  
+  
+  figure {
+    border-bottom: 1px solid rgb(0, 128, 102);
+    margin-bottom: 2%;
+  }
+  
+  figcaption {
+    color:rgb(0, 128, 92);
+    font-size: 75%;
+    font-weight: bold;
+    margin-top: 0;
+    width: 90%;
+    line-height: 1.4em;
+  }
+  
+  figcaption span {
+    font-weight: normal;
+    color: gray;
+  }
+  legend {   
+    font-weight: bold;   
+    font-size: medium;   
+    color: rgb(0, 128, 90);  
+    border-bottom: 2px solid navy;
+  }
+  
+  
+  
+  form#contact label {  
+    font-weight: bold;  
+    font-size: small;  
+    color: rgb(21, 175, 137);  
+    line-height: 150%;
+  }
+  
+  #gallery {
+    width: 400px;
+  }
+  
+  form#contact input[type="text"]:valid,  form#contact input[type="tel"]:valid,  form#contact input[type="date"]:valid, form#contact input[type="email"]:valid, form#contact input[type="password"]:valid, form#contact input[type="url"]:valid{
+      color: green;
+  }
+  
+  /* Unmatched */
+  form#contact input[type="text"]:invalid, form#contact input[type="tel"]:invalid, form#contact input[type="date"]:invalid, form#contact input[type="email"]:invalid, form#contact input[type="password"]:invalid, form#contact input[type="url"]:invalid{
+      color: red;
+      border-color:red;
+  }
+  
+  
+  
+  
+  ui.button{color: #339999;}
+
+  .ui.primary.button {
+    background-color: #339999;
+    color: white;
+  }
+  
+  #btn1.ui.primary.button {
+    background-color: #339999;
+    color: white;
+  }
+  
+  #more1 {
+    display: none;
+    margin-top: 1em;    
+  }
+
+  #gallery {
+    width: 100%;
+    padding:0;
+    margin: 0 0 0 12%;
+    overflow:hidden;
+  }
+  
+  #gallery a img {
+          float:left;
+    padding:1%;
+    border: 1px solid #666;
+    margin: 2px 5px;
+  }
+  
+  
+  #photo {
+          padding-top:2em;
+          margin-left:10%;
+  }
+  
+  #photo img {
+    padding: 2em;
+    border: 1px solid #333;
+    position: absolute;
+  }
+
+  #container{
+    width: 100%;
+    margin: 0 auto;
+          padding:0;
+  }
+
+  #container {
+    margin: 0 auto;
+    width: 700px;
+    padding-top: 20px;
+  }
+  
+  #gallery {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #gallery a {
+    display: block;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  #gallery img {
+    border: 0;
+    cursor: pointer;
+  }
+  
+  #photo {
+    width: 570px;
+    height: 430px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-image: url(../images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #photo img {
+    display: none;
+    max-width: 570px;
+    max-height: 430px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  
